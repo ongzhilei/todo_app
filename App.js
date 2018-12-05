@@ -2,20 +2,14 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import { Avatar } from 'react-native-elements'
 import { Icon } from 'react-native-elements'
-
+import Header from './components/headerss';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-      <View style={styles.heartLogo}>
-      <Icon
-      raised
-      name='heartbeat'
-      type='font-awesome'
-      color='#f50'
-      onPress={() => console.log('hello')} />
-      </View>
+      <Header textIwant={'hellooooo'} />
+      <Header textIwant={'goodbyeeee'} />
 
       <Avatar
         large
@@ -26,7 +20,39 @@ export default class App extends React.Component {
       />
         
           <Button style={{ flex: 1, }} title={'Hello!'} onPress={( )=> { console.log('hello'); }} ></Button>
-      <Text style={styles.bigblue}>WASSUP FRENSSSS</Text>
+      <Text style={styles.bigblue}>zhilei</Text>
+      <Text style={styles.red}>Hearts</Text>
+
+      <View style={styles.heartLogo}>
+          <Icon
+          name='heartbeat'
+          type='font-awesome'
+          color='#f50'
+         onPress={() => console.log('hello')} />
+         </View>
+
+          <Icon
+          raised
+          name='sc-telegram'
+          type='evilicon'
+          color='#517fa4'
+          /> 
+
+          <Icon
+          raised
+          name='sc-facebook'
+          type='evilicon'
+          color='#517fa4'
+          /> 
+
+
+        <Button
+          onPress={( )=> { console.log('hello'); }}
+          title="Learn More"
+          color="coral"
+          accessibilityLabel="Learn more about this purple button"
+        /> 
+
       </View>
     );
   }
@@ -40,12 +66,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   bigblue: {
-    flex: 1,
+    height: 300,
     color: 'blue',
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     fontSize: 30,
   },
-  heartLogo: {
-    flex: 1,
-  }
+  red: {
+    color: 'red',
+  },
+  Header: {
+    flex: 1, 
+    backgroundColor: 'coral',
+    alignItems: 'center', 
+    justifyContent:'center',
+  },
 });

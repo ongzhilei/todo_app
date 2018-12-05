@@ -3,8 +3,10 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import { Avatar } from 'react-native-elements'
 import { Icon } from 'react-native-elements'
 import Header from './components/headerss';
+import { createStackNavigator, createAppContainer } from "react-navigation";
+import TodoScreen from './Screens/Todo'
 
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
     
     return (
@@ -49,15 +51,29 @@ export default class App extends React.Component {
 
         <Button
           onPress={( )=> { console.log('hello'); }}
-          title="Learn More"
+          title="Learn More2"
           color="coral"
           accessibilityLabel="Learn more about this purple button"
         /> 
 
+          <Button
+          title="Go to Todo"
+          onPress={() => this.props.navigation.navigate('TodoScreen')}
+        />
       </View>
     );
   }
 }
+
+const AppNavigator = createStackNavigator({
+    Home: App,
+    TodoScreen: Todo,
+});
+
+const AppContainer = createAppContainer(AppNavigator);
+
+export default AppContainer;
+
 
 const styles = StyleSheet.create({
   container: {

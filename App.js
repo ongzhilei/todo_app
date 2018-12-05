@@ -6,6 +6,7 @@ import Header from './components/headerss';
 
 export default class App extends React.Component {
   render() {
+    
     return (
       <View style={styles.container}>
       <Header textIwant={'hellooooo'} />

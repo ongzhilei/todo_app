@@ -1,19 +1,28 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, ScrollView } from 'react-native';
 import { Avatar } from 'react-native-elements'
 import { Icon } from 'react-native-elements'
 import Header from './components/headerss';
 import { createStackNavigator, createAppContainer } from "react-navigation";
-import TodoScreen from './Screens/Todo'
+import Todo from './Screens/Todo'
+import Flexbox from './Screens/Flexbox'
 
 class App extends React.Component {
+
+
+  static navigationOptions = {
+    title: 'Home',
+  };
+
   render() {
     
     return (
-      <View style={styles.container}>
-      <Header textIwant={'hellooooo'} />
+      <ScrollView contentStyle={styles.container}>
+      <View style={{ margin: 20 }}>
+      <Header textIwant={'hjbjb'} />
+      </View>
       <Header textIwant={'goodbyeeee'} />
-
+      <View style={{ padding: 20 }}/>
       <Avatar
         large
         rounded
@@ -60,7 +69,12 @@ class App extends React.Component {
           title="Go to Todo"
           onPress={() => this.props.navigation.navigate('TodoScreen')}
         />
-      </View>
+
+        <Button
+          title="Go to Flexbox"
+          onPress={() => this.props.navigation.navigate('FlexboxScreen')}
+        />
+      </ScrollView>
     );
   }
 }
@@ -68,6 +82,7 @@ class App extends React.Component {
 const AppNavigator = createStackNavigator({
     Home: App,
     TodoScreen: Todo,
+    FlexboxScreen: Flexbox,
 });
 
 const AppContainer = createAppContainer(AppNavigator);
@@ -83,7 +98,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   bigblue: {
-    height: 300,
+    height: 500,
     color: 'blue',
     fontWeight: 'normal',
     fontSize: 30,

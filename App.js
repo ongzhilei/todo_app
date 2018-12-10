@@ -33,7 +33,6 @@ class App extends React.Component {
         
           <Button style={{ flex: 1, }} title={'Hello!'} onPress={( )=> { console.log('hello'); }} ></Button>
       <Text style={styles.bigblue}>zhilei</Text>
-      <Text style={styles.red}>Hearts</Text>
 
       <View style={styles.heartLogo}>
           <Icon
